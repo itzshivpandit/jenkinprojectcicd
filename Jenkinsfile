@@ -12,7 +12,7 @@ pipeline {
 
         stage('Build docker image') {
             steps {  
-                sh 'docker build -t -p 100:100 shivsharma01/myimage:$BUILD_NUMBER .'
+                sh 'docker build -t shivsharma01/myimage1:$BUILD_NUMBER .'
             }
         }
         stage('login to dockerhub') {
@@ -22,7 +22,7 @@ pipeline {
         }
         stage('push image') {
             steps{
-                sh 'docker push shivsharma01/myimage:$BUILD_NUMBER'
+                sh 'docker push shivsharma01/myimage1:$BUILD_NUMBER'
             }
         }
 }
