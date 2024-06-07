@@ -1,10 +1,8 @@
 FROM ubuntu
-RUN apt-get update -y
-RUN apt-get install apache2 -y
-RUN apt-get install git -y
+RUN apt-get update -y && \
+    apt-get install apache2 -y && \
+    apt-get install git -y
 ADD . /var/www/html
-ENTRYPOINT apachectl -D FOREGROUND
-VOLUME ["/devloper"]
+VOLUME ["/developer"]
 EXPOSE 100
-CMD [ "apache2","start" ]
-
+CMD ["apachectl", "-D", "FOREGROUND"]
